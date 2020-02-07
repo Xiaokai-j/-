@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="1.html" >1.html</a>
+    <a href="1.html" target="mainFrame">把1.html显示到iframe</a>
+    <!-- 如果a标签的target是某一个iframe的name，则这个a标签的效果是：在这个iframe中装入指定的网页 -->
+    <a href="2.html" target="mainFrame">把2.html显示到iframe</a>
+    <!-- src属性：用来设置要引入的.html文件的url -->
+
+    <iframe src="2.html" name="mainFrame" frameborder="0" style="border:1px solid #ccc"></iframe>
+    <hr>
+    <iframe src="http://www.baidu.com" name="" frameborder="0" style="border:1px solid #ccc"></iframe>
+    <hr>
+    <iframe src="http://www.qq.com" name="" frameborder="0" style="border:1px solid #ccc"></iframe>
+</body>
+</html>
