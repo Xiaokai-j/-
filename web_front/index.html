@@ -160,10 +160,10 @@
             <span>|</span>
             <a href="#">招聘人才</a>
             <span>|</span>
-            <a href="#">友情链接</a>		
+            <a href="#">友情链接</a>
         </div>
-        <p>CopyRight © 2019 深圳大事件信息技术股份有限公司   All Rights Reserved</p>
-        <p>电话：0755-****888    粤ICP备*******8号</p>
+        <p>CopyRight © 2019 深圳大事件信息技术股份有限公司 All Rights Reserved</p>
+        <p>电话：0755-****888 粤ICP备*******8号</p>
     </div>
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="./js/template-web.js"></script>
@@ -226,57 +226,57 @@
     </script>
     <script>
         // 1. 获取文章的类型并显示
-        category.get().then(function(res){
+        category.get().then(function (res) {
             console.log(res);
             // 渲染结构
             var htmlStr = template('cate', res)
             // console.log(htmlStr);
             // 显示
             // 替换整个容器中的html
-            $('#left_menu').html(htmlStr); 
+            $('#left_menu').html(htmlStr);
 
             // 追加一些内容
-            $('#level_two_menu').append(htmlStr ) 
+            $('#level_two_menu').append(htmlStr)
         })
 
         // 2. 显示焦点图
         //  调用接口，获取数据，template渲染
-        article.getFouceFive().then(function(res){
+        article.getFouceFive().then(function (res) {
             console.log(res);
-            if(res.code === 200){
+            if (res.code === 200) {
                 // 渲染
                 var htmlStr = template("focus", res)
                 // console.log(htmlStr);
-                $('#focus_list').html(htmlStr )
-                
-            } else{
+                $('#focus_list').html(htmlStr)
+
+            } else {
                 alert(res.msg)
-            } 
+            }
         })
 
         // 3. 显示排行文章
         //  调用接口，获取数据，template渲染
-        article.getRank().then(function(res){
+        article.getRank().then(function (res) {
             console.log(res);
-            if(res.code === 200){
+            if (res.code === 200) {
                 // 渲染
-                var htmlStr = template('tmpRank',res)
+                var htmlStr = template('tmpRank', res)
                 console.log(htmlStr);
-                $('#rank').html(htmlStr )
-                
+                $('#rank').html(htmlStr)
+
             } else {
                 alert(res.msg)
             }
         })
 
         //4. 最新资讯
-        article.getLastest().then(function(res){
+        article.getLastest().then(function (res) {
             console.log(res);
-            if(res.code === 200){
+            if (res.code === 200) {
                 // 渲染
-                var htmlStr = template('tmpNews',res)
+                var htmlStr = template('tmpNews', res)
                 console.log(htmlStr);
-                $('#news_list').html(htmlStr )
+                $('#news_list').html(htmlStr)
             } else {
                 alert(res.msg)
             }
