@@ -39,7 +39,7 @@
                         </td>
                     </tr> -->
 
-                    
+
                 </tbody>
                 <tfoot>
                     <tr>
@@ -51,7 +51,7 @@
             </table>
         </div>
     </div>
-<!-- 用来做添加的模态框 -->
+    <!-- 用来做添加的模态框 -->
     <div class="modal fade" id="addModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -78,8 +78,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <!-- 用来做编辑的模态框 -->
     <div class="modal fade" id="editModal">
         <div class="modal-dialog" role="document">
@@ -91,8 +91,8 @@
                 <div class="modal-body">
                     <form>
                         <!-- hidden的好处在于：1页面上不可见。 2.可以支持dom操作 -->
-                        <input type="hidden"  class="form-control" id="edit_id">
-                        
+                        <input type="hidden" class="form-control" id="edit_id">
+
                         <div class="form-group">
                             <label for="edit_name" class="control-label">分类名称:</label>
                             <input type="text" class="form-control" id="edit_name">
@@ -153,15 +153,15 @@
         // 1. 从接口中取出数据，显示在表格中
         getAndShow()
         function getAndShow() {
-            category.get().then(function(res){
+            category.get().then(function (res) {
                 // 用模板引擎渲染数据
-                var htmlStr = template('tmp_cate', res)
+                let htmlStr = template('tmp_cate', res)
                 console.log(htmlStr);
                 // 把html结构显示在tbody
-                $('#category_table').html( htmlStr )
+                $('#category_table').html(htmlStr)
             })
         }
-        
+
 
         // 2. 添加功能
         // 这里用到了bootstrap的模态框 https://v4.bootcss.com/docs/components/modal/
@@ -169,20 +169,20 @@
         // 点击添加按钮：
         // (1) 收集用户信息, 简单判断
         // (2) 发请求，根据反馈，做后续操作
-        $('#model_add').click(function(){
-            var name = $('#name').val().trim()
-            var slug = $('#slug').val().trim()
+        $('#model_add').click(function () {
+            let name = $('#name').val().trim()
+            let slug = $('#slug').val().trim()
 
-            if(name.length === 0 || slug.length === 0){
+            if (name.length === 0 || slug.length === 0) {
                 alert('不能为空')
                 return
             }
 
-            console.log(name,slug);
+            console.log(name, slug);
             // 调用添加方法
-            category.add(name,slug).then(function(res){
+            category.add(name, slug).then(function (res) {
                 console.log(res);
-                if(res.code === 200){
+                if (res.code === 200) {
                     // 添成加功
                     // (1) 清空用户的输入
                     $('#name').val('')
@@ -199,24 +199,24 @@
         })
 
         // 关闭  隐藏模态框
-        $('#model_shutoff').click(function(){
+        $('#model_shutoff').click(function () {
             $('#addModal').modal('hide')
         })
-        
-        
+
+
         // 3. 删除
 
         // 思路：用事件委托给 删除 添加点击事件
         // (1) 获取id
         // (2) 请求接口，根据反馈，做后续操作
-        $('#category_table').on('click', '.del',function(){
+        $('#category_table').on('click', '.del', function () {
             // alert(1)
             // 在生成按钮时，要先设置自定义属性，再在这里获取自定义属性 data-id
-            var id = $(this).attr('data-id')
+            let id = $(this).attr('data-id')
 
-            category.del(id).then(function(res){
+            category.del(id).then(function (res) {
                 console.log(res);
-                if(res.code === 200){
+                if (res.code === 200) {
                     // 删除成功,重新获取数据
                     getAndShow()
                 } else {
@@ -230,34 +230,34 @@
         // 用事件委托给编辑按钮 添加点击事件
         // （1）弹出模态框，并显示当前要编辑的内容
         //  (2) 用户修改，点击保存，发请求，做后续操作
-        $('#category_table').on('click','.edit', function(){
+        $('#category_table').on('click', '.edit', function () {
             // 取出当前要编辑的内容
-            var id = $(this).attr('data-id')
-            var name = $(this).attr('data-name')
-            var slug = $(this).attr('data-slug')
+            let id = $(this).attr('data-id')
+            let name = $(this).attr('data-name')
+            let slug = $(this).attr('data-slug')
             // 弹出模态框
             //  给模态框中的input设置值
-            $('#edit_id').val(id )
-            $('#edit_name').val(name )
-            $('#edit_slug').val(slug )
+            $('#edit_id').val(id)
+            $('#edit_name').val(name)
+            $('#edit_slug').val(slug)
             $('#editModal').modal('show') // 弹出模态框
             // alert(1)
         })
         // 点击按钮 保存修改
         // (1) 收集用户信息, 简单判断
         // (2) 发请求，根据反馈，做后续操作
-        $('#model_save').click(function(){
-            var id =  $('#edit_id').val().trim()
-            var new_name =  $('#edit_name').val().trim()
-            var new_slug =  $('#edit_slug').val().trim()
+        $('#model_save').click(function () {
+            let id = $('#edit_id').val().trim()
+            let new_name = $('#edit_name').val().trim()
+            let new_slug = $('#edit_slug').val().trim()
 
-            if(new_name.length === 0 || new_slug.length === 0){
+            if (new_name.length === 0 || new_slug.length === 0) {
                 alert('不能为空')
                 return
             }
             // console.log(id,new_name,new_slug);
-            category.edit(id,new_name,new_slug).then(function(res){
-                if(res.code === 200){
+            category.edit(id, new_name, new_slug).then(function (res) {
+                if (res.code === 200) {
                     // 编辑成功
                     // (1) 隐藏模态框
                     $('#editModal').modal('hide'); // 把id为editModal的模态框隐藏起来
@@ -266,7 +266,7 @@
                 } else {
                     alert(res.msg)
                 }
-                
+
             })
         })
 
@@ -275,7 +275,7 @@
         //     console.log(res);
         //     // 渲染数据
         // })
-        
+
     </script>
 
 
