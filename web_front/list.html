@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大事件-列表页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="logo fl"><img src="images/logo.png" alt="logo"></a>
+        <div class="search_form fl">
+            <input type="text" class="search_txt" placeholder="黑洞照片">
+            <button class="search_btn"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="link_info fr">
+            <a href="#"><i class="fa fa-angle-right"></i>&nbsp;&nbsp;网站地图</a><br>
+            <a href="#"><i class="fa fa-angle-right"></i>&nbsp;&nbsp;招聘信息</a>
+        </div>
+    </div>
+
+    <div class="menu_con">
+        <div class="menu">
+            <div class="menu_collapse fl">
+                <a href="javascript:;" class="level_one"><i class="fa fa-list-ul"></i>全部分类</a>
+                <ul class="level_two" id='level_two_menu'>
+                    <li class="up"></li>
+                </ul>
+            </div>
+            <ul class="left_menu fl" id="left_menu">
+            </ul>
+            <ul class="right_menu fr">
+                <li><a href="#">科技专题</a></li>
+                <li><a href="#">财经专题</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main_con clearfix">
+        <div class="left_con setfr">
+
+            <div class="list_title">
+                <h3>科 技</h3>
+            </div>
+
+            <div id="list">
+                <!-- 用来显示文章列表的容器 -->
+            </div>
+
+            <!-- 分页 -->
+            <ul id="pagination" class="pagination-sm"></ul>
+            
+
+        </div>
+        <div class="right_con setfl">
+            <div class="common_wrap">
+                <h3><i class="fa fa-bar-chart"></i> 一周热门排行</h3>
+                <ul class="content_list"  id="rank">
+                    <li><span class="first">1</span><a href="#">神奇的水滴摄影，泡泡中的世界泡泡中的世界</a></li>
+                    <li><span class="second">2</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span class="third">3</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span>4</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span>5</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span>6</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span>7</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                </ul>
+            </div>
+            <div class="common_wrap">
+                <h3><i class="fa fa-commenting-o"></i> 最新评论</h3>
+                <ul class="content_list comment_list">
+                    <li>
+                        <span>山</span>
+                        <b><em>山治</em> 9个月前(08-14)说:</b>
+                        <strong>挺会玩的</strong>
+                    </li>
+                    <li>
+                        <span>丽</span>
+                        <b><em>丽丽</em> 9个月前(08-14)说:9个月前(08-14)说:9个月前(08-14)说:</b>
+                        <strong>挺会玩的挺会玩的挺会玩的挺会玩的</strong>
+                    </li>
+                    <li>
+                        <span>R</span>
+                        <b><em>Rechael</em> 9个月前(08-14)说:</b>
+                        <strong>挺会玩的</strong>
+                    </li>
+                    <li>
+                        <span>J</span>
+                        <b><em>John</em> 9个月前(08-14)说:</b>
+                        <strong>挺会玩的</strong>
+                    </li>
+                    <li>
+                        <span>段</span>
+                        <b><em>段正淳</em> 9个月前(08-14)说:</b>
+                        <strong>挺会玩的</strong>
+                    </li>
+                    <li>
+                        <span>乔</span>
+                        <b><em>乔峰</em> 9个月前(08-14)说:</b>
+                        <strong>挺会玩的</strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="common_wrap">
+                <h3><i class="fa fa-bullseye"></i> 焦点关注</h3>
+                <ul class="content_list guanzhu_list">
+                    <li><a href="#">神奇的水滴摄影，泡泡中的世界泡泡中的世界</a></li>
+                    <li><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer clearfix">
+        <div class="foot_link">
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="#">联系我们</a>
+            <span>|</span>
+            <a href="#">招聘人才</a>
+            <span>|</span>
+            <a href="#">友情链接</a>		
+        </div>
+        <p>CopyRight © 2019 深圳大事件信息技术股份有限公司   All Rights Reserved</p>
+        <p>电话：0755-****888    粤ICP备*******8号</p>
+    </div>
+
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery.twbsPagination.js"></script>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/util/config.js"></script>
+    <script src="./js/util/category.js"></script>
+    <script src="./js/util/article.js"></script>
+
+
+    <!-- 
+        文章类型
+        把当前的列表中对应的文章编号高亮显示
+        如果是 id=1 ， 则 科学 这个项目应该是处于选中状态
+        curId: 是我们人为在res的基础上添加一个属性
+    -->
+    <script id="cate" type="text/html">
+        {{each data item}}
+            {{if item.id == curId}}
+                <li class="cur"><a href="./list.html?id={{item.id}}">{{item.name}}</a></li>
+            {{else}}
+                <li><a href="./list.html?id={{item.id}}">{{item.name}}</a></li>
+            {{/if}}
+
+        {{/each}}
+    </script>
+
+    <!-- 文章列表 -->
+    <script id="tmpNews" type="text/html">
+        {{each data item}}
+            <div class="common_news_list">
+                <a href="#" class="list_pic"><img src="{{item.cover}}" alt=""></a>
+                <h4><a href="#">{{item.title}}</a></h4>
+                <p>{{item.content}}</p>
+                <div class="new_info">
+                    <span>标签：{{item.type}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i>&nbsp;阅读({{item.read}}
+                        )&nbsp;&nbsp;&nbsp;<i class="fa fa-commenting"></i>&nbsp;评论( {{item.comment}} )</span>
+                    <b>发布于 {{item.date}}</b>
+                </div>
+            </div>
+        {{/each}}
+    </script>
+
+    <!-- 排行榜
+        前三名有自已的class
+    -->
+    <script id="tmpRank" type="text/html">
+        {{each data item idx}}
+            {{if idx == 0}}
+                <li><span class="first">{{idx+1}}</span><a href="#">{{item.title}}</a></li>
+            {{else if idx == 1}}
+                <li><span class="second">{{idx+1}}</span><a href="#">{{item.title}}</a></li>
+            {{else if idx == 2}}
+                <li><span class="third">{{idx+1}}</span><a href="#">{{item.title}}</a></li>
+            {{else}}
+                <li><span>{{idx+1}}</span><a href="#">{{item.title}}</a></li>
+            {{/if}}
+        {{/each}}
+    </script>
+
+    <script>
+        // 1. 从地址栏中获取出id
+        // window.localtion  http://127.0.0.1:5500/web_front/list.html?id=1
+        // window.location.search  ?id=1
+        var id = window.location.search.substr(4)
+
+        // 2. 显示菜单导航菜单，并把当前的文章类别高亮显示 
+        // 获取文章的类型并显示
+        category.get().then(function(res){
+            // 补充一个属性来保存当前的类别编号，以方便在模板内部来获取这个编号
+            res.curId = id
+            console.log(res);
+            // 渲染结构
+            var htmlStr = template('cate', res)
+            // console.log(htmlStr);
+            // 显示
+            // 替换整个容器中的html
+            $('#left_menu').html(htmlStr); 
+
+            // 追加一些内容
+            $('#level_two_menu').append(htmlStr ) 
+        })
+        
+        // 3. 显示文章列表
+        var curPage = 1; // 当前的要取回第几页的文章
+        // 调用接口拿数据，并显示
+        getAndShow()
+        
+        // 4. 热门排行
+        // id就是当前的类别编号
+        article.getRank(id).then(function(res){
+            console.log(res);
+            if(res.code === 200){
+                // 渲染
+                var htmlStr = template('tmpRank',res)
+                console.log(htmlStr);
+                $('#rank').html(htmlStr )
+                
+            } else {
+                alert(res.msg)
+            }
+        })
+        
+        
+        // 定义一个函数，是为了在页码点击上去调用
+        function getAndShow() {
+            article.getList(id,curPage).then(function(res){
+                console.log(res);
+                // res.pages表示当前查询条件得到的数据的总页数
+                var htmlStr = template('tmpNews',res)
+                // 数据渲染
+                console.log(htmlStr);
+                $('#list').html( htmlStr)
+                // 如果只有一页，则不需要显示分页条
+                if(res.pages <= 1){
+                    return 
+                }
+                // 分页的基础代码
+                $('#pagination').twbsPagination({             
+                    initiateStartPageClick:false,
+                    totalPages: res.pages, // 总页数
+                    // 这个visiblePages有什么用处？
+                    visiblePages: 2, // 最多可以显示的按钮
+                    first:'首页',
+                    prev:'上一页',
+                    next:'下一页',
+                    last:'尾页',
+                    onPageClick: function (event, page) {
+                        // page是当前用户点击的页码
+                        // 更新全局变量，重新查询
+                        curPage = page 
+                        // 为什么不需要传入参数？ 它是如何达到获取指定页的数据 功能？
+                        // 全局变量
+                        getAndShow();
+                    }
+                });
+            })
+        }
+        
+
+        
+    </script>
+
+</body>
+
+</html>
